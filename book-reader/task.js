@@ -3,6 +3,7 @@ const fontSize = document.body.querySelectorAll("a.font-size");
 let bookContentClass = 0;
 for (let i = 0; i < fontSize.length; i++) {
     fontSize[i].addEventListener("click", function () {
+        event.preventDefault();
         for (const botom of fontSize) {
             if (botom.className.includes('font-size_active')) {
                 botom.classList.remove('font-size_active');
@@ -34,7 +35,7 @@ for (let i = 0; i < colorText.length; i++) {
             bookContent.style.color = this.dataset.color;
         } else {
             bookContent.style.color = '';
-        }
+        }  
     })
 }
 const colorBack = document.body.querySelectorAll(".book__control_background a.color");
